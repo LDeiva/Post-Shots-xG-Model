@@ -85,9 +85,29 @@ Step for creating the model:
    
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    
-   • Logistic Regression.
-     ![image](https://github.com/user-attachments/assets/891ec73e-d9f4-47e7-835a-a6d7ebb73afb)
+   • Logistic Regression:
+      
+     Logistic regression is a linear classification model.
+   
+     It is based on the sigmoid function which predicts the probability that a given example belongs to a given class in our case 1 (Goal) or 0 (No Goal).
+   
+     ![image](https://github.com/user-attachments/assets/956d0846-ef6d-4d8d-8995-c354e7de7e5c)
 
+     • P(Goal) = Probability of the shot becoming a goal.
+   
+     • e = Euler’s number (~2.718).
+   
+     • β₀ = The intercept (a baseline value).
+   
+     • βᵢ = Weights assigned to different shot factors.
+   
+     • xᵢ = The different shot-related variables (e.g., distance, angle).
+
+   • Random Forest:
+
+     ![image](https://github.com/user-attachments/assets/0a003b96-ac4b-4f7b-a21a-bae53ae788cf)
+
+   
 
 
      
