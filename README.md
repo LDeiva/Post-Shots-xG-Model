@@ -2,12 +2,18 @@
 Creation a little Post-Shots xG model using Free Statsbomb Event Data.
 
 Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal. 
+
 xG are built using thousands shots recorded by different matches of different championships in different season and give and estimates the probability of the goal occurring on a scale between 0 and 1.
-There are several more or less complex expected goals models, but in general the information that is used to train the model is the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, the type of action that precedes the shot, etc.
+
+There are several more or less complex expected goals models, but in general the information that is used to train the model is the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, the type of action that precedes the 
+shot, etc.
 
 The limitation of xG is that it does not define how likely it is that a shot after being taken will result in a goal.
+
 In practice it does not say how good or bad a player was at shooting at goal.
+
 To overcome this problem, Post-Shots xG (PSxG) were created.
+
 This model is trained using only the information that is available after the ball has been kicked, excluding all that is prior to the shot.
 
 P.N. Since the model evaluates the probability that a shot will result in a goal while also knowing the final information about the shot, only shots that are on target are considered in these models because a shot that is not directed towards the goal has by definition a probability of 0 of resulting in a goal.
@@ -16,9 +22,13 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 Step for creating the model:
 
 1) Collecting the Data:
+   
    Statsbomb relesead during years a lot of Events Data of different matches.
+   
    I collected all the data from all the competitions released by Statsbomb.
+   
    I then took only the shooting events from their datasets and of these I took only those from the men's competitions excluding the competitions prior to 2000 to create a dataset of shots as similar as possible.
+   
    Of these shots I took only those that occurred in Open Play and that were on target so that they had turned into a goal or had been saved by the goalkeeper.
    
 2) Features creation:
@@ -67,15 +77,19 @@ Step for creating the model:
    
    • end_location_z: Measure of vertical shot location for on-target shots.
 
-4) Creation of target variable:
+3) Creation of target variable:
    
    The Targhet variable was created converting the description of the final result of the shot into 0 if it was a shot blocked by the goalkeeper and into 1 if it was converted into a Goal.
  
-5) Model Selection:
+4) Model Selection:
    
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    
    • Logistic Regression.
+     ![image](https://github.com/user-attachments/assets/891ec73e-d9f4-47e7-835a-a6d7ebb73afb)
+
+
+
      
 
       
