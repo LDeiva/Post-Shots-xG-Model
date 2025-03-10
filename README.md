@@ -85,7 +85,7 @@ Step for creating the model:
    
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    
-   • Logistic Regression:
+   • **Logistic Regression**:
       
      Logistic regression is a linear classification model.
    
@@ -103,7 +103,7 @@ Step for creating the model:
    
      • xᵢ = The different shot-related variables (e.g., distance, angle).
 
-   • Random Forest:
+   • **Random Forest**:
 
      ![image](https://github.com/user-attachments/assets/0a003b96-ac4b-4f7b-a21a-bae53ae788cf)
 
