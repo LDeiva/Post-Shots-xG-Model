@@ -1,7 +1,7 @@
 # Post-Shots-xG-Model
 Creation a little Post-Shots xG model using Free Statsbomb Event Data.
 
-Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal.
+Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal. 
 xG are built using thousands shots recorded by different matches of different championships in different season and give and estimates the probability of the goal occurring on a scale between 0 and 1.
 There are several more or less complex expected goals models, but in general the information that is used to train the model is the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, the type of action that precedes the shot, etc.
 
