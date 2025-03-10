@@ -26,6 +26,7 @@ Step for creating the model:
    As anticipated, I excluded all the features that could describe events prior to the start of the shot.
    I therefore used only features that described the shot from when the ball was kicked to when the shot was stopped or turned into a goal.
    Below is the list of calculated features:
+   
    • shot_distance: Distance, in yards, between shot location and goal center.	.
    • shot_angle: Angle, in degrees, between shot location, left post and right post.
    • shot_speed: The average velocity of the shot in yards per second.
@@ -48,10 +49,10 @@ Step for creating the model:
      The Left_central_part features, again for the Dummy trap problem, was eliminated.
    • end_location_z: Measure of vertical shot location for on-target shots.
 
-3) Creation of target variable:
+4) Creation of target variable:
    The Targhet variable was created converting the description of the final result of the shot into 0 if it was a shot blocked by the goalkeeper and into 1 if it was converted into a Goal.
  
-4) Model Selection:
+5) Model Selection:
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    • Logistic Regression.
      
