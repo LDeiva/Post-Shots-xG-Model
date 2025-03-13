@@ -107,9 +107,22 @@ Step for creating the model:
 
      ![image](https://github.com/user-attachments/assets/0a003b96-ac4b-4f7b-a21a-bae53ae788cf)
 
+      The random forest is an ensemble model, that is, it combines different models (in this case, multiple decision trees), thus increasing accuracy and decreasing the risk of overfitting.
+
+      Each tree is trained on a subset of the dataset to decrease variance and only on a subset of features, so as to prevent some trees from becoming dominant.
    
+      Finally, the class prediction is obtained with the majority vote of the trees.
 
+   • **XGBoost**:
+   ![image](https://github.com/user-attachments/assets/d8259f55-86dd-47f4-a849-d9e40f7aad07)
 
+      Unlike the random forest that creates independent trees (Bagging) it creates trees in sequence (Boosting).
+   
+      In practice each new tree corrects the errors made by the previous one.
+   
+      The trees are trained to minimize the residual error using the gradient of the loss function.
+   
+      XGBoost adds L1 and L2 regularizations to minimize the possibility of overfitting and can also automatically handle missing values ​​in the dataset.
      
 
       
