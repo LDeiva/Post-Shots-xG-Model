@@ -21,7 +21,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
 Step for creating the model:
 
-1) Collecting the Data:
+1) **Collecting the Data**:
    
    Statsbomb relesead during years a lot of Events Data of different matches.
    
@@ -31,7 +31,7 @@ Step for creating the model:
    
    Of these shots I took only those that occurred in Open Play and that were on target so that they had turned into a goal or had been saved by the goalkeeper.
    
-2) Features creation:
+2) **Features creation**:
    Once I aggregated the shots that could be used to create the PSxG model, I calculated and created the features that described the different shots.
    As anticipated, I excluded all the features that could describe events prior to the start of the shot.
    I therefore used only features that described the shot from when the ball was kicked to when the shot was stopped or turned into a goal.
@@ -114,7 +114,7 @@ Step for creating the model:
       Finally, the class prediction is obtained with the majority vote of the trees.
 
    • **XGBoost**:
-   ![image](https://github.com/user-attachments/assets/d8259f55-86dd-47f4-a849-d9e40f7aad07)
+   ![image](https://github.com/user-attachments/assets/4b355137-05e4-460f-8c4e-25dac313a058)
 
       Unlike the random forest that creates independent trees (Bagging) it creates trees in sequence (Boosting).
    
