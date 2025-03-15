@@ -177,13 +177,43 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
       • N = Number of shots.
 
-      Unlike other metrics, Log-Loss evaluates how close the predicted probabilities are to the actual outcomes (goal or no goal).
-      
+      **What does it measure?**
 
-      
+      Unlike other metrics, which evaluate the ability to distinguish between goals and non-goals, Log-Loss evaluates how close the predicted probabilities are to the actual outcomes (goal or no goal).
 
+      It also severely penalizes predictions that are highly confident but incorrect.
       
+      If a model assigns very high probabilities to an event that does not happen, or very low probabilities to an event that does happen, the Log Loss explodes and the model is severely penalized.
+      
+      **Why is it useful for xG and PSxG?**
 
+      • Measures the calibration of probabilities: If a model says that a shot has a 70% chance of being a goal, then 7 times out of 10 that shot should really become a goal.
+      
+      • Distinguishes between “more or less correct” predictions: Saying 0.8 instead of 0.7 is less serious than saying 0.9 instead of 0.1.
+      
+      • Sensitive to serious errors: If an impossible shot has xG = 0.95, Log Loss punishes it severely.
+
+     **B) Brier Score**
+
+      ![image](https://github.com/user-attachments/assets/1fdaa8bd-6f57-4de7-bb3e-afaa744f7d05)
+
+      • p<sub>i</sub> = is the predicted probability.
+
+      • y<sub>i</sub> = is the actual outcome (1 or 0).
+
+      **What does it measure?**
+  
+      • The Brier Score measures the root mean square error between predicted probabilities and actual outcomes.
+      
+      • It measures both how close probabilities are to the correct values ​​(accuracy) and how well calibrated they are.
+
+      **Why is it useful for xG and PSxG?**
+
+      • More interpretable than Log Loss: Values ​​close to 0 mean good predictions.
+      
+      • Does not penalize large errors excessively: If you give 0.99 to a bad shot, the error is 0.9801, while in Log Loss it would be huge.
+      
+      • Does not distinguish between high/bad and low/bad probabilities: Saying 0.4 instead of 0.8 is penalized as much as saying 0.8 instead of 0.4.
 
 
 
