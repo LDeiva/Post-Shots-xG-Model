@@ -41,35 +41,36 @@ Step for creating the model:
    
    Below is the list of calculated features:
    
-   • shot_distance: Distance, in yards, between shot location and goal center.
+   • **shot_distance**: Distance, in yards, between shot location and goal center.
    
-   • shot_angle: Angle, in degrees, between shot location, left post and right post.
+   • **shot_angle**: Angle, in degrees, between shot location, left post and right post.
    
-   • shot_speed: The average velocity of the shot in yards per second.
+   • **shot_speed**: The average velocity of the shot in yards per second.
    
-   • player_inside_shot_come: number of Number of players present in the conical area between the shot and goal posts.
+   • **player_inside_shot_come**: number of Number of players present in the conical area between the shot and goal posts.
    
-   • cone_density: Aggregate inverse distance for each player behind the ball in the shot cone.
+   • **cone_density**: Aggregate inverse distance for each player behind the ball in the shot cone.
    
-   • Distance_D1 (D2): Distance, in yards, between shooter and nearest (second nearest) player.
+   • **Distance_D1 (D2)**: Distance, in yards, between shooter and nearest (second nearest) player.
    
-   • GK_distance_to_goal_center: Distance, in yards, between the goalkeeper and the goal center.
+   • **GK_distance_to_goal_center**: Distance, in yards, between the goalkeeper and the goal center.
    
-   • Keeper_Angle: Angle, in degrees, made by goalkeeper, left post and right post.
+   • **Keeper_Angle**: Angle, in degrees, made by goalkeeper, left post and right post.
    
-   • under_pressure: StatsBomb measure indicating whether a defender pressured the shot taker.
+   • **under_pressure**: StatsBomb measure indicating whether a defender pressured the shot taker.
    
-   • shot_open_goal: StatsBomb measure indicating whether the shot was in front of an open goal.
+   • **shot_open_goal**: StatsBomb measure indicating whether the shot was in front of an open goal.
    
-   • shot_deflected: StatsBomb measure indicating whether the shot was deflected by an other player.
+   • **shot_deflected**: StatsBomb measure indicating whether the shot was deflected by an other player.
    
-   • Shot Technique Type: Statsbomb defines how the shot was executed in these ways (half volley, volley, overhead, lob, backheel, header, and normal), using One Hot Encoding Technique every each type has become a boolean column (normal columns is delated to get around 
+   • **Shot Technique Type**: Statsbomb defines how the shot was executed in these ways (half volley, volley, overhead, lob, backheel, header, and normal), using One Hot Encoding Technique every each type has become a boolean column (normal columns is delated to get 
+     around 
      the dummy trap).
    
-   • Shot Body Part Type: Statsbomb defines the part of the body with which the shot was made in these ways (Left Foot, Other, Right Foot, Head), using One Hot Encoding Technique every each type has become a boolean column (Head columns is delated to get around 
+   • **Shot Body Part Type**: Statsbomb defines the part of the body with which the shot was made in these ways (Left Foot, Other, Right Foot, Head), using One Hot Encoding Technique every each type has become a boolean column (Head columns is delated to get around 
      the dummy trap).
    
-   • end_location_y: Measure of horizontal shot location for on-target shots.
+   • **end_location_y**: Measure of horizontal shot location for on-target shots.
 
      Since it was highly correlated with other features and was too predictive for the final result leading to overfitting, it was divided into 6 different features, making it less granular.
    
@@ -79,13 +80,13 @@ Step for creating the model:
    
      The Left_central_part features, again for the Dummy trap problem, was eliminated.
    
-   • end_location_z: Measure of vertical shot location for on-target shots.
+   • **end_location_z**: Measure of vertical shot location for on-target shots.
 
-3) Creation of target variable:
+3) **Creation of target variable**:
    
    The Targhet variable was created converting the description of the final result of the shot into 0 if it was a shot blocked by the goalkeeper and into 1 if it was converted into a Goal.
  
-4) Model Selection:
+4) **Model Selection**:
    
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    
