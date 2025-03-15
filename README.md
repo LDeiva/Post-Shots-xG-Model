@@ -32,9 +32,13 @@ Step for creating the model:
    Of these shots I took only those that occurred in Open Play and that were on target so that they had turned into a goal or had been saved by the goalkeeper.
    
 2) **Features creation**:
+   
    Once I aggregated the shots that could be used to create the PSxG model, I calculated and created the features that described the different shots.
+   
    As anticipated, I excluded all the features that could describe events prior to the start of the shot.
+   
    I therefore used only features that described the shot from when the ball was kicked to when the shot was stopped or turned into a goal.
+   
    Below is the list of calculated features:
    
    • shot_distance: Distance, in yards, between shot location and goal center.
