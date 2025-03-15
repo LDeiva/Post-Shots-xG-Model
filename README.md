@@ -169,6 +169,12 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     • **Log-Loss**
       ![image](https://github.com/user-attachments/assets/d5ca30f3-940c-49e9-bb8a-0b41ff66c3f7)
+   
+      • y<sub>i</sub> = is the actual result (1 = goal, 0 = no goal).
+   
+      • p<sub>i</sub> =is the probability predicted by the model.
+   
+      • N = Number of shots.
 
       Unlike other metrics, Log-Loss evaluates how close the predicted probabilities are to the actual outcomes (goal or no goal).
       
