@@ -84,7 +84,7 @@ Step for creating the model:
 
 3) **Creation of target variable**:
    
-   The Targhet variable was created converting the description of the final result of the shot into 0 if it was a shot blocked by the goalkeeper and into 1 if it was converted into a Goal.
+   The Targhet variable was created converting the description of the final result of the shot into **0** if it was a shot blocked by the goalkeeper and into **1** if it was converted into a Goal.
  
 4) **Model Selection**:
    
