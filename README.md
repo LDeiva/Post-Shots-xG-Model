@@ -8,7 +8,7 @@ xG are built using thousands shots recorded by different matches of different ch
 There are several more or less complex expected goals models, but in general the information that is used to train the model is the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, the type of action that precedes the 
 shot, type of assit, etc.
 
-xG advantages:
+**xG advantages**:
 
 • Measures the quality of chances created, regardless of the skill of the shooter.
 
@@ -16,7 +16,7 @@ xG advantages:
 
 • Useful for analyzing the effectiveness of an attack and the ability of a team to create dangerous chances.
 
-The limitation of xG:
+**The limitation of xG**:
 
 • Does not take into account how the shot is executed (power, accuracy, spin).
 
@@ -36,7 +36,7 @@ In practice PSxG measures the probability of a shot ending in a goal after it ha
 
 P.N. Since the model evaluates the probability that a shot will result in a goal while also knowing the final information about the shot, only shots that are on target are considered in these models because a shot that is not directed towards the goal has by definition a probability of 0 of resulting in a goal.
 
-PsXG advantages:
+**PsXG advantages**:
 
 • Evaluates the actual quality of the shot, not just the position.
 
@@ -44,7 +44,7 @@ PsXG advantages:
 
 • Used to evaluate the performance of goalkeepers, comparing goals conceded with PSxG.
 
-The limitation of PSxG:
+**The limitation of PSxG**:
 
 • It depends on the shot already taken, so it does not help to evaluate the quality of the creation of the chance.
 
