@@ -215,6 +215,6 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
       
       • Does not distinguish between high/bad and low/bad probabilities: Saying 0.4 instead of 0.8 is penalized as much as saying 0.8 instead of 0.4.
 
-     The combination of these two metrics **(Log-Loss + Brier Score)** is the best way to check the xG model quality.
+     **P.S.** The combination of these two metrics **(Log-Loss + Brier Score)** is the best way to check the xG model quality.
 
 
