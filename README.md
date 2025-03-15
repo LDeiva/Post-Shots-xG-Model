@@ -167,7 +167,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
 5) **Metric Selection**
 
-    • **Log-Loss**
+     **A) Log-Loss**
+   
       ![image](https://github.com/user-attachments/assets/d5ca30f3-940c-49e9-bb8a-0b41ff66c3f7)
    
       • y<sub>i</sub> = is the actual result (1 = goal, 0 = no goal).
