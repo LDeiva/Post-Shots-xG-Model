@@ -1,23 +1,56 @@
 # Post-Shots-xG-Model
 Creation a little Post-Shots xG model using Free Statsbomb Event Data.
 
-Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal. 
+Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal before the shot is taken. 
 
 xG are built using thousands shots recorded by different matches of different championships in different season and give and estimates the probability of the goal occurring on a scale between 0 and 1.
 
 There are several more or less complex expected goals models, but in general the information that is used to train the model is the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, the type of action that precedes the 
-shot, etc.
+shot, type of assit, etc.
 
-The limitation of xG is that it does not define how likely it is that a shot after being taken will result in a goal.
+xG advantages:
 
-In practice it does not say how good or bad a player was at shooting at goal.
+• Measures the quality of chances created, regardless of the skill of the shooter.
+
+• Helps assess whether a team is scoring more or less than it "should".
+
+• Useful for analyzing the effectiveness of an attack and the ability of a team to create dangerous chances.
+
+The limitation of xG:
+
+• Does not take into account how the shot is executed (power, accuracy, spin).
+
+• Does not consider the goalkeeper's ability to save.
+
+• Can underestimate long shots from players with a very good shot.
+
+In practice it does not say how good or bad a player was at shooting at goal or a keeper to save a goal.
 
 To overcome this problem, Post-Shots xG (PSxG) were created.
 
 This model is trained using only the information that is available after the ball has been kicked, excluding all that is prior to the shot.
 
+Some of the information take in account are the shot angle, the distance from the center of the goal, the amount of players in the shooting cone, shot speed, final position of shot, GoalKeeper position, etc.
+
+In practice PSxG measures the probability of a shot ending in a goal after it has been kicked.
+
 P.N. Since the model evaluates the probability that a shot will result in a goal while also knowing the final information about the shot, only shots that are on target are considered in these models because a shot that is not directed towards the goal has by definition a probability of 0 of resulting in a goal.
 
+PsXG advantages:
+
+• Evaluates the actual quality of the shot, not just the position.
+
+• Useful for analyzing the skills of shooters (for example who shoots better than average).
+
+• Used to evaluate the performance of goalkeepers, comparing goals conceded with PSxG.
+
+The limitation of PSxG:
+
+• It depends on the shot already taken, so it does not help to evaluate the quality of the creation of the chance.
+
+• It does not distinguish between a shot forced by a defender and a well-executed shot in favorable conditions.
+
+• It does not help to predict future performances as much as xG (a nice shot into the top corner can be a random event).
 
 Step for creating the model:
 
