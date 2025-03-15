@@ -51,7 +51,7 @@ Step for creating the model:
    
    • **cone_density**: Aggregate inverse distance for each player behind the ball in the shot cone.
    
-   • **Distance_D1 (D2)**: Distance, in yards, between shooter and nearest (second nearest) player.
+   • **Distance_D1 (D2)**: Distance, in yards, between shooter and nearest (second nearest) defender.
    
    • **GK_distance_to_goal_center**: Distance, in yards, between the goalkeeper and the goal center.
    
