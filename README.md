@@ -1,7 +1,7 @@
 # Post-Shots-xG-Model
 Creation a little Post-Shots xG model using Free Statsbomb Event Data.
 
-## xG and PSxG Theory:
+## What are xG and PSxG?:
 Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal before the shot is taken. 
 
 xG are built using thousands shots recorded by different matches of different championships in different season and give and estimates the probability of the goal occurring on a scale between 0 and 1.
@@ -53,7 +53,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
 • It does not help to predict future performances as much as xG (a nice shot into the top corner can be a random event).
 
-Step for creating the model:
+## Step for creating the model:
 
 1) **Collecting the Data**:
    
@@ -64,6 +64,8 @@ Step for creating the model:
    I then took only the shooting events from their datasets and of these I took only those from the men's competitions excluding the competitions prior to 2000 to create a dataset of shots as similar as possible.
    
    Of these shots I took only those that occurred in Open Play and that were on target so that they had turned into a goal or had been saved by the goalkeeper.
+   
+   At the end of this proces i got a dataframe of **23097** shots.
    
 2) **Features creation**:
    
@@ -162,7 +164,16 @@ Step for creating the model:
       The trees are trained to minimize the residual error using the gradient of the loss function.
    
       XGBoost adds L1 and L2 regularizations to minimize the possibility of overfitting and can also automatically handle missing values ​​in the dataset.
-     
+
+5) **Metric Selection**
+
+    • **Log-Loss**
+      ![image](https://github.com/user-attachments/assets/d5ca30f3-940c-49e9-bb8a-0b41ff66c3f7)
+
+      Unlike other metrics, Log-Loss evaluates how close the predicted probabilities are to the actual outcomes (goal or no goal).
+      
+
+      
 
       
 
