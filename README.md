@@ -88,6 +88,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    • **cone_density**: Aggregate inverse distance for each player behind the ball in the shot cone.
    
    • **Distance_D1 (D2)**: Distance, in yards, between shooter and nearest (second nearest) defender.
+
+   • **GK_distance_to_shoter**: Distance, in yards, between the goalkeeper and the Shooter center.
    
    • **GK_distance_to_goal_center**: Distance, in yards, between the goalkeeper and the goal center.
    
@@ -118,11 +120,11 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
    • **end_location_z**: Measure of vertical shot location for on-target shots.
 
-3) **Creation of target variable**:
+4) **Creation of target variable**:
    
    The Targhet variable was created converting the description of the final result of the shot into **0** if it was a shot blocked by the goalkeeper and into **1** if it was converted into a Goal.
  
-4) **Model Selection**:
+5) **Model Selection**:
    
    Since we are dealing with a binary classification problem, the models that are best suited to this type of problem are the following classifiers:
    
@@ -165,7 +167,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
       XGBoost adds L1 and L2 regularizations to minimize the possibility of overfitting and can also automatically handle missing values ​​in the dataset.
 
-5) **Metric Selection**
+6) **Metric Selection**
 
      **A) Log-Loss**
    
@@ -217,4 +219,53 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
      **P.S.** The combination of these two metrics **(Log-Loss + Brier Score)** is the best way to check the xG model quality.
 
+7) **Models Training and Result**:
+
+    Now that I have created my shot dataset, containing 23097 sample shots and 28 features, and selected the models to test and the metrics to use to evaluate them, I can start training.
+
+    ##EDA
+    The first step was to perform EDA on the data.
+
+    **1) Check relations between Features and Target variable**
+    It was checked whether the features correlated highly with the target variable to evaluate whether some could be too predictive on the result leading to data likage and therefore to overfitting of the model.
+   
+    The features most at risk were those related to the final position of the shot that could contain information on the outcome of the shot.
+   
+    To do this, a spearman correlation and a t-test were performed between the numerical features and the target and a Chi square test (Chi2) between the categorical features and the target.
+
+    **2) Check correlation between Features and VIF values calculation**
+   
+    Subsequently, it was checked if there were any linear and non-linear correlations between the features that could lead to redundancy of information, furthermore the VIF values ​​were calculated to evaluate if multicollinearity was present.
+
+    From the analyses it was seen that the two highest correlations were between GK_distance_to_shoter and shot_distance and between Keeper_angle and GK_distance_to_goal_center.
+   
+    From the VIF values ​​it resulted that GK_distance_to_shoter and shot_end_location_y were the features with the highest VIF values.
+   
+    It was therefore decided to eliminate GK_distance_to_shoter which was both redundant with shot_distance and had a high VIF, and to transform end_shot_location_y into 6 categorical features as previously described, it was not possible to eliminate it as it was a 
+    highly relevant feature for the PSxG model.
+   
+    This significantly lowered the VIF values, no feature exceeded 20 as a value.
+   
+    For domain reasons and to not make the model too simple, we chose to keep both GK_distance_to_shoter and Keeper_angle, both considered fundamental features.
+   
+    **3) Model Training and Evaluation**
+
+    With the clean and adjusted dataset of shots we were ready to train the model.
+
+    The dataset was divided into train and test using the 80-20 rule having a training dataset equivalent to 80% of the original one and the test equivalent to 20%.
+
+    Weights were calculated to give to the model to manage the imbalance of the classes in the target variable.
+
+    The 3 chosen models were trained using the nested cross validation with k-fold = 10 and evaluated using the chosen metrics (Log-Loss and Brier Score).
+   
+    The calibration of the models was also evaluated with the calibration curve and adjusted with the Isotonic regulation.
+   
+    Finally using the SHAP Values ​​then the Features importance were evaluated.
+
+    **4) Results**
+
+    The evaluation of the models using the two selected metrics showed that XGBoost is the model with the two lowest metrics and therefore the one that produces the least error in assessing the probability that an event belongs to one class or the other, i.e. that a 
+    shot is a goal or not.
+
+    
 
