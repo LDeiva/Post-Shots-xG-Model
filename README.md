@@ -264,8 +264,12 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     **4) Results**
 
-    The evaluation of the models using the two selected metrics showed that XGBoost is the model with the two lowest metrics and therefore the one that produces the least error in assessing the probability that an event belongs to one class or the other, i.e. that a 
-    shot is a goal or not.
+    The evaluation of the models using the two selected metrics showed that XGBoost is the model that presents the lowest values ​​for them and therefore the one that produces the least error in evaluating the probability that an event belongs to one class or the other, 
+    i.e. that a shot is a goal or not.
 
+    ![image](https://github.com/user-attachments/assets/50a7991d-567f-4e7d-b800-3b54e05dbb79)
+
+    
+    
     
 
