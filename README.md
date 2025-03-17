@@ -267,8 +267,14 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
     The evaluation of the models using the two selected metrics showed that XGBoost is the model that presents the lowest values ​​for them and therefore the one that produces the least error in evaluating the probability that an event belongs to one class or the other, 
     i.e. that a shot is a goal or not.
 
-    ![image](https://github.com/user-attachments/assets/50a7991d-567f-4e7d-b800-3b54e05dbb79)
+    ![image](https://github.com/user-attachments/assets/b8fffb7b-5a61-406e-b3ee-a79af1226823)
 
+
+    From the table you can see that both models manage to beat the performance of a random model, which I called Baseline, indicating that they are able to learn real patterns instead of making random guesses.
+
+    And from both the metrics for the uncalibrated and calibrated models, it is clear that the XGBoost model is the best performing.
+
+    
     
     
     
