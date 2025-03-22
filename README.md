@@ -227,8 +227,6 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 8) **Models Training and Result**:
 
     Now that I have created my shot dataset, containing 23097 sample shots and 28 features, and selected the models to test and the metrics to use to evaluate them, I can start training.
-
-    ## Model Creation
    
     **The first step was to perform EDA on the data.**
 
