@@ -269,13 +269,31 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     ![image](https://github.com/user-attachments/assets/b8fffb7b-5a61-406e-b3ee-a79af1226823)
 
-
     From the table you can see that both models manage to beat the performance of a random model, which I called Baseline, indicating that they are able to learn real patterns instead of making random guesses.
 
     And from both the metrics for the uncalibrated and calibrated models, it is clear that the XGBoost model is the best performing.
 
-    
-    
-    
-    
+    The results of the PSxG models are shown below with the XGBoost SHAP Values ​​graphs.
+
+    **SHAP Values Interpretation**
+    From the SHAP values, it is clear that the final positions of the shot are some of the features that have the most impact on the model classification.
+
+    From the plots of the shots on target, it is clear that most of the goals actually occur in the areas far from the center and closer to the posts.
+
+    Finally, looking at the shots with a high probability of becoming goals, defined as those with PSxG>=0.90, it turns out that they are those with the lowest shot_distance, as shown by the SHAP graph, with few players in the shooting cone, often in shot_open_goal, 
+    and as already said with the shot that ends as close as possible to one of the posts.
+
+    **Shot_Speed problem**
+   
+    To close this article, a consideration on Shot_speed.
+
+    From the SHAP values, it appears that as the speed of the shot increases, the probability of the shot converting into a goal decreases.
+
+    This is counterintuitive and not very sensible, the reason must be sought in the calculation of this feature.
+
+    Normally this feature is calculated with tracking data, while having only event data I had to calculate it as the ratio between the distance (approximated to a straight path) traveled by the ball divided by the duration of the shot event provided by statsbomb.
+
+    In this case, in addition to the approximation made on the trajectory of the shot, a time interval calculated by an operator is used and a small error is enough to incur errors.
+
+    This probably leads to obtaining high speeds on long-distance shots due to errors in the calculation of the duration of the shot and consequently associated with shots with a lower probability of being scored.
 
