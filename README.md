@@ -317,7 +317,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     Normally this feature is calculated with tracking data, while having only event data I had to calculate it as the ratio between the distance (approximated to a straight path) traveled by the ball divided by the duration of the shot event provided by statsbomb.
 
-    In this case, in addition to the approximation made on the trajectory of the shot, a time interval calculated by an operator is used and a small error is enough to incur errors.
+    In this case, in addition to the approximation made on the trajectory of the shot, a time interval calculated by an operator is used and a small error in the moment of selection of the start and end of the shooting event is enough to incur small errors on the 
+    timestamps that have a high impact on the calculation of the speed.
 
-    This probably leads to obtaining high speeds on long-distance shots due to errors in the calculation of the duration of the shot and consequently associated with shots with a lower probability of being scored.
+    This probably leads to obtaining high speeds on long-distance shots due to errors in the calculation of the duration and distance of the shot and consequently associated with shots with a lower probability of being scored.
 
