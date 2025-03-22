@@ -299,6 +299,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
 
     **SHAP Values Interpretation**
+   
     From the SHAP values, it is clear that the final positions of the shot are some of the features that have the most impact on the model classification.
 
     From the plots of the shots on target, it is clear that most of the goals actually occur in the areas far from the center and closer to the posts.
