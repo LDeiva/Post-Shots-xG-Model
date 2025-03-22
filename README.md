@@ -159,7 +159,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
       Finally, the class prediction is obtained with the majority vote of the trees.
 
    • **XGBoost**:
-   ![Screenshot 2025-03-13 190450](https://github.com/user-attachments/assets/91152e67-9c6d-41b1-83bd-723e17018f3a)
+   
+    ![Screenshot 2025-03-13 190450](https://github.com/user-attachments/assets/91152e67-9c6d-41b1-83bd-723e17018f3a)
 
 
       Unlike the random forest that creates independent trees (Bagging) it creates trees in sequence (Boosting).
@@ -170,7 +171,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
       XGBoost adds L1 and L2 regularizations to minimize the possibility of overfitting and can also automatically handle missing values ​​in the dataset.
 
-6) **Metric Selection**
+7) **Metric Selection**
 
      **A) Log-Loss**
    
@@ -223,7 +224,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
      **P.S.** The combination of these two metrics **(Log-Loss + Brier Score)** is the best way to check the xG model quality.
 
-7) **Models Training and Result**:
+8) **Models Training and Result**:
 
     Now that I have created my shot dataset, containing 23097 sample shots and 28 features, and selected the models to test and the metrics to use to evaluate them, I can start training.
 
@@ -280,16 +281,21 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
     The results of the PSxG models are shown below with the XGBoost SHAP Values ​​graphs.
 
     **Logistic Regression Results Visualization**
+   
     ![Logistic_regression_classification](https://github.com/user-attachments/assets/9fd544bf-359a-4b65-b2ac-ed892007e6e8)
 
     **Random Forest Results Visualization**
+   
     ![random_forest_classification](https://github.com/user-attachments/assets/7edbc345-e454-4e61-b524-28972e0e62ee)
 
     **XGBoost Results Visualization**
+   
     ![xgboost_classification](https://github.com/user-attachments/assets/54bbf1a7-270d-4342-927c-4fbcd5c5cadd)
 
     **SHAP Values XGBoost**
+   
     ![Figure 2025-03-02 205639 (27)](https://github.com/user-attachments/assets/21c8318a-f70d-45d2-9ce9-1e87128c7a4c)
+   
 
     **SHAP Values Interpretation**
     From the SHAP values, it is clear that the final positions of the shot are some of the features that have the most impact on the model classification.
