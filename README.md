@@ -228,8 +228,9 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     Now that I have created my shot dataset, containing 23097 sample shots and 28 features, and selected the models to test and the metrics to use to evaluate them, I can start training.
 
-    ##EDA
-    The first step was to perform EDA on the data.
+    ## EDA
+   
+    **The first step was to perform EDA on the data.**
 
     **1) Check relations between Features and Target variable**
     It was checked whether the features correlated highly with the target variable to evaluate whether some could be too predictive on the result leading to data likage and therefore to overfitting of the model.
