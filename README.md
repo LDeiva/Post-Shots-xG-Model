@@ -1,6 +1,16 @@
 # Post-Shots-xG-Model
 **Purpose of the project**: Creation a simple Post-Shots xG model using Free Statsbomb Event Data.
 
+**Materials**: 
+1) PSxG_Model.py is the main file for model creation.
+   
+2) PSxG_Features_Function.py contain the functions used to create features for the model.
+   
+3) ML_PSxG_Function.py contain different type of function for test and regulate ML models.
+   
+4) Data used in this project are  provided free of charge by Statsbomb.
+
+
 ## What are xG and PSxG?:
 Expected Goals (xG) are the most famous metrics in football and their purpose is to quantify the probability that a shot will result in a goal before the shot is taken. 
 
