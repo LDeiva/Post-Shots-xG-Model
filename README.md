@@ -228,7 +228,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
     Now that I have created my shot dataset, containing 23097 sample shots and 28 features, and selected the models to test and the metrics to use to evaluate them, I can start training.
 
-    ## EDA
+    ## Model Creation
    
     **The first step was to perform EDA on the data.**
 
@@ -253,6 +253,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
     This significantly lowered the VIF values, no feature exceeded 20 as a value.
    
     For domain reasons and to not make the model too simple, we chose to keep both GK_distance_to_shoter and Keeper_angle, both considered fundamental features.
+
+    **The second step was to training and evaluate.**
    
     **3) Model Training and Evaluation**
 
