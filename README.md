@@ -134,7 +134,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
    
      It is based on the sigmoid function which predicts the probability that a given example belongs to a given class in our case 1 (Goal) or 0 (No Goal).
    
-     ![image](https://github.com/user-attachments/assets/956d0846-ef6d-4d8d-8995-c354e7de7e5c)
+     ![Screenshot 2025-03-10 234116](https://github.com/user-attachments/assets/9064c400-e20c-4e5d-b716-a24842bdb194)
+
 
      • P(Goal) = Probability of the shot becoming a goal.
    
@@ -148,7 +149,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
    • **Random Forest**:
 
-     ![image](https://github.com/user-attachments/assets/0a003b96-ac4b-4f7b-a21a-bae53ae788cf)
+     ![Screenshot 2025-03-10 234421](https://github.com/user-attachments/assets/e0ee6568-5c46-4779-82c2-3fc4fe836522)
+
 
       The random forest is an ensemble model, that is, it combines different models (in this case, multiple decision trees), thus increasing accuracy and decreasing the risk of overfitting.
 
@@ -157,7 +159,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
       Finally, the class prediction is obtained with the majority vote of the trees.
 
    • **XGBoost**:
-   ![image](https://github.com/user-attachments/assets/4b355137-05e4-460f-8c4e-25dac313a058)
+   ![Screenshot 2025-03-13 190450](https://github.com/user-attachments/assets/91152e67-9c6d-41b1-83bd-723e17018f3a)
+
 
       Unlike the random forest that creates independent trees (Bagging) it creates trees in sequence (Boosting).
    
@@ -171,7 +174,8 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
      **A) Log-Loss**
    
-      ![image](https://github.com/user-attachments/assets/d5ca30f3-940c-49e9-bb8a-0b41ff66c3f7)
+      ![Screenshot 2025-03-15 192024](https://github.com/user-attachments/assets/cfe15105-4554-4259-bab7-0da2a7d1a2ae)
+
    
       • y<sub>i</sub> = is the actual result (1 = goal, 0 = no goal).
    
@@ -197,7 +201,7 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
 
      **B) Brier Score**
 
-      ![image](https://github.com/user-attachments/assets/1fdaa8bd-6f57-4de7-bb3e-afaa744f7d05)
+      ![Screenshot 2025-03-15 193353](https://github.com/user-attachments/assets/9a2dbf74-a8ef-4f4c-aa2c-10ec87108b43)
 
       • p<sub>i</sub> = is the predicted probability.
 
@@ -267,13 +271,25 @@ P.N. Since the model evaluates the probability that a shot will result in a goal
     The evaluation of the models using the two selected metrics showed that XGBoost is the model that presents the lowest values ​​for them and therefore the one that produces the least error in evaluating the probability that an event belongs to one class or the other, 
     i.e. that a shot is a goal or not.
 
-    ![image](https://github.com/user-attachments/assets/b8fffb7b-5a61-406e-b3ee-a79af1226823)
+    ![Screenshot 2025-03-22 171351](https://github.com/user-attachments/assets/134f21e8-9103-4ef3-abac-8c164992be04)
 
     From the table you can see that both models manage to beat the performance of a random model, which I called Baseline, indicating that they are able to learn real patterns instead of making random guesses.
 
     And from both the metrics for the uncalibrated and calibrated models, it is clear that the XGBoost model is the best performing.
 
     The results of the PSxG models are shown below with the XGBoost SHAP Values ​​graphs.
+
+    **Logistic Regression Results Visualization**
+    ![Logistic_regression_classification](https://github.com/user-attachments/assets/9fd544bf-359a-4b65-b2ac-ed892007e6e8)
+
+    **Random Forest Results Visualization**
+    ![random_forest_classification](https://github.com/user-attachments/assets/7edbc345-e454-4e61-b524-28972e0e62ee)
+
+    **XGBoost Results Visualization**
+    ![xgboost_classification](https://github.com/user-attachments/assets/54bbf1a7-270d-4342-927c-4fbcd5c5cadd)
+
+    **SHAP Values XGBoost**
+    ![Figure 2025-03-02 205639 (27)](https://github.com/user-attachments/assets/21c8318a-f70d-45d2-9ce9-1e87128c7a4c)
 
     **SHAP Values Interpretation**
     From the SHAP values, it is clear that the final positions of the shot are some of the features that have the most impact on the model classification.
